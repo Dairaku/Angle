@@ -20,4 +20,5 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
     float radius;
+    ofVec2f mousePos;
 };

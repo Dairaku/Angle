@@ -4,11 +4,11 @@
 void ofApp::setup(){
     ofBackground(255, 255, 255);
     ofSetCircleResolution(60);
-}
+    }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    radius =hypotf(mouseX-ofGetWidth()/2, mouseY-ofGetHeight()/2);
 }
 
 //--------------------------------------------------------------
@@ -22,10 +22,24 @@ void ofApp::draw(){
     }
     
     ofTranslate(ofGetWidth()/2, ofGetHeight()/2);//座標系の中心をスクリーンの中心に
+    ofSetLineWidth(2);
+    
+    //外側の円を書く
     ofSetColor(0);
     ofNoFill();//塗りつぶしなし
-    radius =hypotf(mouseX,mouseY);
     ofCircle(0, 0, radius);
+    
+    //内側の円を書く
+    ofFill();
+    ofCircle(0,0,radius/4);
+    
+    //マウスと座標系の中心を直線でつなぐ
+    ofLine(0,0, mouseX-ofGetWidth()/2 , mouseY-ofGetHeight()/2);
+    
+    //マウスの位置に十字を書く
+    ofLine(mouseX-ofGetWidth()/2, -ofGetHeight()/2, mouseX-ofGetWidth()/2 , ofGetHeight()/2);
+    ofLine(-ofGetWidth()/2 , mouseY-ofGetHeight()/2 , ofGetWidth()/2, mouseY-ofGetHeight()/2);
+    
 
 }
 
