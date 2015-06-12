@@ -23,5 +23,5 @@ class ofApp : public ofBaseApp{
     float angle;
     ofVec2f mousePos;
     ofColor color;
-    bool spacekeypressed;
+    bool KeyPressed;
 };
