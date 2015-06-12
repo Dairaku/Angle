@@ -20,5 +20,8 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
     float radius;
+    float angle;
     ofVec2f mousePos;
+    ofColor color;
+    bool spacekeypressed;
 };
